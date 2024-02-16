@@ -1,4 +1,4 @@
-# 项目名称
+# Luci-app-nettask
 
 项目描述：这个仓库是一个用于在 OpenWrt 的 LuCI 界面上编写和运行自定义 Shell 脚本的工具，支持多种执行方式。
 
