@@ -1,8 +1,8 @@
 # Luci-app-nettask
 
 项目描述：这个仓库是一个用于在 OpenWrt 的 LuCI 界面上编写和运行自定义 Shell 脚本的工具，支持多种执行方式。
-![项目预览图](https://github.com/lucikap/luci-app-nettask/blob/main/png/Overview.png)
-<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/Overview.png" alt="效果图" width="300">
+
+<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/Overview.png" alt="效果图" width="500">
 
 ## 功能特点
 
