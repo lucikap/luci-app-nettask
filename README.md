@@ -18,11 +18,15 @@
 
    ```shell
    git clone https://github.com/lucikap/luci-app-nettask.git
+   
+3. 可以在编译选项的luci-->Applications 菜单下找到luci-app-nettask选项，勾选为“*”状态即可编译到固件中。
+   ```shell
+   make -j=12 V=99 #开始编译
 
 ## 关于本插件
 
 1. 插件由brukamen开发，目的是方便大家在某些情况下需要执行shell脚本时不需要再进行繁琐的添加文件、修改文件等操作，可以直接在luci进行编辑并运行。
-2. 插件非盈利为目的而开发，此仓库完全开源，如果你有好的建议可以在GitHub提出改进建议（或者发送至我的邮箱169296793@qq.com）。
+2. 插件非盈利为目的而开发，此仓库完全开源，如果你有好的建议可以在GitHub提出改进建议（或者发送至我的邮箱169296793@qq.com），我更希望你直接申请成为开发者。
 3. 如果你对此感兴趣，可以加入讨论QQ群组：555201601<br>
 
 <img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/qrcode_1708176698643.jpg" alt="qq" width="300">
