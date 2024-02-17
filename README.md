@@ -21,7 +21,7 @@
    
 3. 可以在编译选项的luci-->Applications 菜单下找到luci-app-nettask选项，勾选为“*”状态即可编译到固件中。
    ```shell
-   make -j=12 V=99 #开始编译
+   make -j12 V=99 #开始编译
 
 ## 关于本插件
 
