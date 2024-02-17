@@ -2,7 +2,7 @@
 
 项目描述：这个仓库是一个用于在 OpenWrt 的 LuCI 界面上编写和运行自定义 Shell 脚本的工具，支持多种执行方式。
 
-<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/Overview.png" alt="效果图" width="500">
+<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/Overview.png" alt="效果图" width="800">
 
 ## 功能特点
 
