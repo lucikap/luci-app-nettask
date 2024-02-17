@@ -24,22 +24,6 @@
 1. 插件由brukamen开发，目的是方便大家在某些情况下需要执行shell脚本时不需要再进行繁琐的添加文件、修改文件等操作，可以直接在luci进行编辑并运行。
 2. 插件非盈利为目的而开发，此仓库完全开源，如果你有好的建议可以在GitHub提出改进建议（或者发送至我的邮箱169296793@qq.com）。
 3. 如果你对此感兴趣，可以加入讨论QQ群组：555201601<br>
-<html>
-<head>
-    <style>
-        .image-container {
-            display: flex;
-        }
 
-        .image-container img {
-            margin-right: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="image-container">
-        <img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/qrcode_1708176698643.jpg" alt="qq" width="300">
-        <img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/eeda353f2bd3110abbe23dd362bc839.jpg" alt="weixin" width="300">
-    </div>
-</body>
-</html>
+<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/qrcode_1708176698643.jpg" alt="qq" width="300">
+<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/eeda353f2bd3110abbe23dd362bc839.jpg" alt="weixin" width="300">
