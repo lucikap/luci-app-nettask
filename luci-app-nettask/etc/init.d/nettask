@@ -5,7 +5,8 @@ START=99
 dusr_bata() {
 	net_on=$(uci get nettask.main.network)
 	word_on=$(uci get nettask.main.word)
-	button_on=$(uci get nettask.main.open)
+	button_on=$(uci get nettask.main.button)
+	open_on=$(uci get nettask.main.open)
 	timi_on=$(uci get nettask.main.timi)
 	fen_u=$(uci get nettask.main.minute)
 	shi_u=$(uci get nettask.main.shi)
@@ -32,23 +33,29 @@ start() {
 	fi
 
     if [ "$timi_on" -eq 1 ]; then
+		[ -s /etc/crontabs/root ] || flag=1    #若为空文件，需重启定时服务
 		if grep -q "brukamen" /etc/crontabs/root; then
 			logger "任务已经存在！！"
 		else
-			touch /etc/crontabs/root
-			echo "${fen_u} ${shi_u} ${ri_u} ${yue_u} ${zhou_u} sh /etc/nettask/timing.sh & #brukamen"  | crontab -
+			echo "${fen_u} ${shi_u} ${ri_u} ${yue_u} ${zhou_u} sh /etc/nettask/timing.sh & #brukamen" >>/etc/crontabs/root  #需保留其他定时任务，故使用追加
 		fi
+		[ "$flag" -eq 1 ] && /etc/init.d/cron restart
 	else
 		sed -i '/brukamen/d' /etc/crontabs/root
 	fi
 
     if [ "$button_on" -eq 1 ]; then
-		logger "跳过激活"
+        if [ "$open_on" -eq 1 ]; then
+            logger "跳过激活"
+        else
+            [ -x /etc/nettask/bucc ] || chmod +x /etc/nettask/bucc
+            mv -f /etc/rc.button/reset /etc/rc.button/reset_bak  #原文件备份
+            ln -s /etc/nettask/bucc /etc/rc.button/reset
+            uci set nettask.main.open="1" && uci commit nettask
+        fi
 	else
-		cp -f /etc/nettask/bucc /etc/rc.button/reset
-		rm /etc/nettask/bucc
-		chmod +x /etc/rc.button/reset
-		uci set nettask.main.open="1" && uci commit nettask
+		[ -f /etc/rc.button/reset_bak ] && mv -f /etc/rc.button/reset_bak /etc/rc.button/reset
+		[ "$open_on" -eq 1 ] && uci set nettask.main.open="0" && uci commit nettask
 	fi
 }
 
