@@ -33,11 +33,12 @@ start() {
 	fi
 
     if [ "$timi_on" -eq 1 ]; then
-		[ -s /etc/crontabs/root ] || flag=1    #若为空文件，需重启定时服务
+		[ -s /etc/crontabs/root ] || flag=1 && touch /etc/crontabs/root #若为空文件，需重启定时服务
 		if grep -q "brukamen" /etc/crontabs/root; then
-			logger "任务已经存在！！"
-		else
+			sed -i '/brukamen/d' /etc/crontabs/root #如果存在旧任务，就要先删掉原来的
 			echo "${fen_u} ${shi_u} ${ri_u} ${yue_u} ${zhou_u} sh /etc/nettask/timing.sh & #brukamen" >>/etc/crontabs/root  #需保留其他定时任务，故使用追加
+		else
+			echo "${fen_u} ${shi_u} ${ri_u} ${yue_u} ${zhou_u} sh /etc/nettask/timing.sh & #brukamen" >>/etc/crontabs/root
 		fi
 		[ "$flag" -eq 1 ] && /etc/init.d/cron restart
 	else
@@ -45,8 +46,8 @@ start() {
 	fi
 
     if [ "$button_on" -eq 1 ]; then
-        if [ "$open_on" -eq 1 ]; then
-            logger "跳过激活"
+        if  [ "$open_on" -eq 1 ]; then
+            :
         else
             [ -x /etc/nettask/bucc ] || chmod +x /etc/nettask/bucc
             mv -f /etc/rc.button/reset /etc/rc.button/reset_bak  #原文件备份
@@ -59,16 +60,11 @@ start() {
 	fi
 }
 
-# 停止服务函数
 stop() {
 	echo "Error"
 }
 
-# 重新加载服务函数
 reload() {
-	# 停止服务
 	stop
-	# 启动服务
 	start
 }
-
