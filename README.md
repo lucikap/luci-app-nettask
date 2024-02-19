@@ -30,5 +30,4 @@
 3. 如果你对此感兴趣，可以加入讨论QQ群组：555201601<br>
 
 <img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/qrcode_1708176698643.jpg" alt="qq" width="300">
-4. 如果觉得本插件帮助到了你，可以支持brukamen一下：
-<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/eeda353f2bd3110abbe23dd362bc839.jpg" alt="weixin" width="300">
+
