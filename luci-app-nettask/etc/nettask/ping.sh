@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nettime=$(uci get uci get nettask.main.nettime)
+nettime=$(uci get nettask.main.nettime)
 
 while true; do
     if ping -c 4 -W 3 8.8.8.8 >/dev/null; then
