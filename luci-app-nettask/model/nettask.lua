@@ -158,9 +158,8 @@ f8 = s:taboption("config5", Value, "week", translate("周（1~7）"), translate(
     "在以上输入框中，您可以输入指定时间来定时运行脚本。如果不想指定特定值，可以使用 '*' 表示 '任何数'。<br><br>以下是一些示例：<br><br>- 如果周的值为 '*'，则表示每周的每天指定时间都会执行脚本。<br>- 您可以指定多个值或范围，使用逗号分隔多个指定值。例如，周的值为 '1,2,3' 表示每周的周一、周二和周三都会执行脚本。您还可以使用 '-' 表示范围，例如 '1-3' 表示从周一到周三都会执行脚本。<br>- 您还可以使用 '/' 和 '*' 组合来表示某个值需要满足整除关系才执行脚本。例如，分钟的值为 '*/30' 表示每个小时的0分和30分时执行脚本。<br><br>请注意，只有当每个时间条件都满足时，脚本才会执行。同时，请确保使用英文输入法输入所有符号，否则可能无法正常执行。<br>"))
 f8.default = "*"
 
-local apply = luci.http.formvalue("cbi.apply")
-if apply then
-	io.popen("/etc/init.d/nettask start")
+m.on_commit = function(self)
+    luci.sys.call("/etc/init.d/nettask start")
 end
 
 return m
