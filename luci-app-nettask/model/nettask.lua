@@ -1,7 +1,7 @@
 local fs = require "nixio.fs"
 local sys = require "luci.sys"
 m = Map("nettask", translate("openwrt自定义shell脚本"), translate(
-    "这是一个由用户自由编写shell脚本的界面工具，它支持立即执行、开机执行、定时执行、按下物理按键时执行，执行系统命令时确保不会对系统造成影响！！！"))
+    "这是一个由用户自由编写shell脚本的界面工具，它支持立即执行、开机执行、定时执行、按下物理按键时执行，执行系统命令时确保不会对系统造成影响！！！<br><a href='https://github.com/lucikap/luci-app-nettask' target='_blank' style='color: lightblue;'>您对此插件有疑问？点此转到项目地址：https://github.com/lucikap/luci-app-nettask</a>"))
 s = m:section(TypedSection, "nettask")
 s.anonymous = true
 
@@ -161,5 +161,6 @@ f8.default = "*"
 m.on_commit = function(self)
     luci.sys.call("/etc/init.d/nettask start")
 end
+
 
 return m
