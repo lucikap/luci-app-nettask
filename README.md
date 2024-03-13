@@ -31,3 +31,7 @@
 
 <img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/qrcode_1708176698643.jpg" alt="qq" width="300">
 
+## 如果可以，不妨以打赏的方式支持Brukamen，相信以后能给大家带来更多好玩的插件！！
+
+<img src="https://github.com/lucikap/luci-app-nettask/blob/main/png/eeda353f2bd3110abbe23dd362bc839.jpg" alt="qq" width="200">
+
