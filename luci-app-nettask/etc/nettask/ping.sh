@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 nettime=$(uci get nettask.main.nettime)
 
